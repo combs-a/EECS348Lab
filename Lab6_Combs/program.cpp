@@ -118,7 +118,16 @@ void matrixMultiply(int matrix_a[MAX_SIZE][MAX_SIZE], int matrix_b[MAX_SIZE][MAX
     {
         for (int j = 0; j < size; j++)
         {
-            result_matrix[i][j] = matrix_a[i][j] * matrix_b[i][j]; // TODO: adjust this; this is normal multiplication and not matrix.
+            result_matrix[i][j] = 0; // Matrix multiplication is a sum of products; starting at 0 due to that.
+
+            for (int k = 0; k < size; k++)
+            {
+                // Since int i tracks the row, and j tracks the column,
+                // to stay in the same row or the same column we need a
+                // third variable to track the place in that specific
+                // row/column, k.
+                result_matrix[i][j] += (matrix_a[i][k] * matrix_b[k][j]);
+            }
         }
     }
 
