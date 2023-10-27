@@ -1,0 +1,19 @@
+/* Practice1's CSS file. */
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.center {
+    margin: auto;
+     text-align: center;
+}
+
+a {
+    color: lightblue;
+}
+
+a:visited {
+    color: lightcoral;
+}
